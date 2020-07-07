@@ -1,4 +1,12 @@
 # attr_encrypted #
+## 3.1.1 ##
+* Added: Only load key if needed (@ankane)
+* Fixed: Fixed a typo (@bitsapien)
+* Added: Use a lazy load hook to configure Active Record (@eugeneius)
+Fixes defect in which encrypted_attributes state was shared across all instances of a given class due to shallow dup. This caused random OpenSSL::Cipher::CipherError errors, particularly in cases in which concurrent encrypts/decrypts were occurring. (@bfreese)
+* Add frozen_string_literal: true (@oniofchaos)
+oniofchaos committed on Mar 25, 2018
+
 
 ## 3.1.0 ##
 * Added: Abitilty to encrypt empty values. (@tamird)
